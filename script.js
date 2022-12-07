@@ -1,44 +1,62 @@
-// fetch('https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/x-www-form-urlencoded'
-//   },
-//   body: JSON.stringify({
-//     username: 'ivan'
-//   })
-// });
-
-
-// // fetch('https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json')
-// //   .then((res) => {
-// //     console.log(res); // если всё хорошо, получили ответ
-// //   })
-// //   .catch((err) => {
-// //     console.log('Ошибка. Запрос не выполнен');
-// //   });
-
-// fetch('https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json', {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     name: 'Иван',
-//     age: 30
-//   })
-// }); 
+// URL: https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json
+// Method: POST
+// contentType: "application/x-www-form-urlencoded"
 
 const getNews = () => {
-  fetch('https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json', {
-  method: 'POST',
-  body: JSON.stringify({
-    // name: 'Иван',
-    // age: 30
-  })
-}); 
+  fetch('https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json')
+  
+    .then((res) => res.json())
+    .then((res) => {
+      res.forEach((news) => {
+        const newsItem = new Card(news);
+        const newsElement = newsItem.generateCard();
+        newsContainer.prepend(newsElement);
+        console.log(news);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+getNews()
+
+const newsContainer = document.querySelector('.news-grid-wrapper');
+class Card {
+  constructor(newsContent) {
+    this._newsContent = newsContent;
+    this._cardSelector = '#news__card-js';
+    this._author = newsContent.author;
+    this._date = newsContent.date;
+    this._id = newsContent.id;
+    this._imgUrl = newsContent.imgUrl;
+    this._name = newsContent.name;
+    this._text = newsContent.text;
+    this._voteStatus = newsContent.voteStatus;
+  }
+
+  _getTemplate() {
+    return document
+      .querySelector(this._cardSelector)
+      .content.querySelector('#news__item-js')
+      .cloneNode(true);
+  }
+
+  generateCard() {
+    this._newsContent = this._getTemplate();
+    this._newsContent.querySelector('.news__title').textContent = this._name;
+    this._newsContent.querySelector('.news__date').textContent = this._date;
+    this._newsContent.querySelector('.news__author').textContent = this._author;
+    this._newsContent.querySelector('.news__preview').textContent = this._text;
+    this._newsContent.querySelector('.news__image').src = this._imgUrl;
+    this._newsContent.querySelector('.news__image').alt = `На фото ` + `${this._name}`;
+
+    return this._newsContent;
+  }
 }
 
-
-
-//   const getNews = () => {
-//   fetch('https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json')
+// const getFetchProducts = () => {
+//   fetch('products.json')
 //     .then((response) => response.json())
 //     .then((res) => {
 //       res.forEach((card) => {
@@ -56,7 +74,7 @@ const getNews = () => {
 // getFetchProducts();
 // const cardsContainer = document.querySelector('.product__area');
 
-// // Карточка с товаром
+// Карточка с товаром
 // class Card {
 //   constructor(cardItem) {
 //     this._cardItem = cardItem;

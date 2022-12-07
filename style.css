@@ -20,8 +20,9 @@ main {
 
 .news__item {
   position: relative;
-  height: 591px;
+  min-height: 591px;
   border-radius: 20px;
+  z-index: 10;
   box-shadow: 0px 4px 15px rgba(0, 161, 92, 0.15);
 }
 
@@ -60,6 +61,7 @@ main {
 }
 
 .news__preview {
+  text-overflow: ellipsis;
   margin: 0 0 42px 0;
 }
 

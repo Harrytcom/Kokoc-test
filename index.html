@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./normalize.css">
   <link rel="stylesheet" href="./style.css">
   
-  <title>Новости Кокос Групп</title>
+  <title>Новости</title>
 </head>
 <body>
   <main>
@@ -76,6 +76,20 @@
         </article>
       </div>
     </section>
+
+    <template class="news__card" id="news__card-js">
+      <article class="news__item" id="news__item-js">
+        <img class="news__image" src="" alt="">
+        <div class="news__content">
+          <h2 class="news__title"></h2>
+          <date class="news__date text-color_gray"></date>
+          <p class="news__preview"></p>
+          <span class="news__author text-color_gray"></span>
+          <button class="button button_like"></button>
+        </div>
+      </article>
+    </template>
+    
   </main>
   <script src="./script.js"></script>
 </body>
