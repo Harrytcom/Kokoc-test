@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-$color-white: #fff;
-$color-gray: #c4c4c4;
 $color-black: #000;
+$color-gray: #c4c4c4;
+$color-white: #fff;
 
 body {
-  margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: calc(9px + 9 * (100vw / 1400));
@@ -13,6 +12,7 @@ body {
   color: $color-black;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* ==================== NEWS SECTION ====================== */

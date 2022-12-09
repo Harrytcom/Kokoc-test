@@ -1,13 +1,13 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
-  margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: calc(9px + 0.6428571429vw);
   line-height: 128%;
   color: #000;
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* ==================== NEWS SECTION ====================== */
