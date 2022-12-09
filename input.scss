@@ -1,52 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$color-white: #fff;
+$color-gray: #c4c4c4;
+$color-black: #000;
 
 body {
   margin: 0;
-}
-
-main {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height:  128%;
-  color: #000;
+  font-size: calc(9px + 9 * (100vw / 1400));
+  line-height: 128%;
+  color: $color-black;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-// ==================== NEWS SECTION ======================
+/* ==================== NEWS SECTION ====================== */
 .news {
+  max-width: 1400px;
+  margin: 0 auto;
 
-&__grid-wrapper {
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 423px);
-  gap: 37px 40px;
-  padding: 0 15px;
-  justify-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-}
+  &__grid-wrapper {
+    display: -ms-grid;
+    display: grid;
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, 423px);
+    gap: 37px 40px;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
 
-&__header {
-  font-size: 48px;
-  font-weight: 400;
-  margin: 44px 0 68px 0;
-}
+    @media (max-width: 430px) {
+      grid-template-columns: minmax(min-content, 1fr);
+      padding: 0;
+    }
+  }
 
-&__item {
-  position: relative;
-  min-height: 591px;
-  border-radius: 20px;
-  overflow: hidden;
-  -webkit-box-shadow: 0px 4px 15px rgba(0, 161, 92, .15);
-          box-shadow: 0px 4px 15px rgba(0, 161, 92, .15);
+  &__header {
+    font-size: calc(24px + 24 * (100vw / 1400));
+    font-weight: 400;
+    margin: 44px 25px 68px;
+
+    @media (max-width: 430px) {
+      grid-template-columns: minmax(min-content, 1fr);
+      margin: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    min-height: 591px;
+    border-radius: 20px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 4px 15px rgba(0, 161, 92, .15);
+    box-shadow: 0px 4px 15px rgba(0, 161, 92, .15);
+
+    @media (max-width: 430px) {
+      min-height: 400px;
+    }
   }
 
   &__image {
     display: block;
     width: 100%;
+    object-fit: cover;
     height: 269px;
+
+    @media (max-width: 430px) {
+      height: 190px;
+    }
   }
 
   &__content {
@@ -54,47 +77,57 @@ main {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
+    flex-direction: column;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
     margin: 24px 35px 35px;
+
+    @media (max-width: 430px) {
+      margin: 10px 5px;
+    }
   }
 
   &__title {
-    font-size: 24px;
+    font-size: calc(12px + 12 * (100vw / 1400));
     margin: 0 0 2px 0;
   }
 
   &__date {
-    font-size: 20px;
+    font-size: calc(10px + 10 * (100vw / 1400));
     margin-bottom: 24px;
   }
 
+  .text-color_gray {
+    color: $color-gray;
+  }
 
-.text-color_gray {
-  color: #C4C4C4;
-}
+  &__preview {
+    margin: 0 0 42px 0;
 
-&__preview {
-  margin: 0 0 42px 0;
-}
+    @media (max-width: 430px) {
+      margin: 5px 2px;
+    }
+  }
 }
 
 .button-like {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   position: absolute;
   background-image: url(./img/like-btn.svg);
   background-repeat: no-repeat;
-  background-color: #fff;
+  background-color: $color-white;
   width: 32px;
   height: 28px;
   right: 35px;
   bottom: 47px;
   padding: 0;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   border: none;
   outline: none;
   -webkit-transition: opacity .3s ease-in-out;
@@ -102,17 +135,26 @@ main {
   transition: opacity .3s ease-in-out;
   cursor: pointer;
 
-  &_active-js {
-    background-image: url(./img/like-btn_active.svg);
+  @media (max-width: 430px) {
+    bottom: 15px;
+    right: 15px;
   }
 
   &:hover {
     opacity: .6;
   }
+
+  &_active-js {
+    background-image: url(./img/like-btn_active.svg);
+  }
+
+  &_active-js:hover {
+    opacity: 1;
+  }
 }
-// Использовал
-/* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
+
+/* 
+Использовал
 * Autoprefixer: v10.4.7
 * Browsers: last 3 version
 */

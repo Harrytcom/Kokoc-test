@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./input.css">
-  <title>Новости</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="./input.css" />
+  <meta name="description" content="Ничего лишнего, только факты" />
+  <meta data-rh="true" name="keywords" content="новости, события, факты, статья, политика, экономика,спорт, медицина" />
+  <title>Проверенные новости от Kokoc, чтобы быть в курсе</title>
 </head>
 <body>
-  <main>
+  <main class="main">
     <section class="news">
-      <div class="news__inner-wrapper">
       <h1 class="news__header">Новости</h1>
-      <div class="news__grid-wrapper" id="news__grid-wrapper-js">
-      </div>
+      <div class="news__grid-wrapper" id="news__grid-wrapper-js"></div>
     </section>
 
     <template class="news__card" id="news__card-js">
       <article class="news__item" id="news__item-js">
-        <img class="news__image news__image-js" src="" alt="">
+        <img class="news__image news__image-js" src="" alt="" />
         <div class="news__content news__content-js">
           <h2 class="news__title news__title-js"></h2>
           <date class="news__date text-color_gray news__date-js"></date>

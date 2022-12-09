@@ -23,9 +23,8 @@ const getNews = () => {
   });
 }
 
-getNews();
 // Не вижу явного преимущества использования POST-метода. Без строгого ТЗ реализовал бы через 'GET'
-// Хотел бы узнать, почему требуется именно метод POST.
+// Хотелось бы узнать, почему требуется именно метод POST.
 
 // const getNews = () => {
 //   fetch('https://dev.mykgproxy.webprofy.ru/upload/frontend/data.json')
@@ -42,6 +41,8 @@ getNews();
 //       console.log(err);
 //     });
 // };
+
+getNews();
 
 class Card {
   constructor(newsItem) {
