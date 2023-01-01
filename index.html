@@ -5,31 +5,37 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./img/favicon-news-80.png">
-  <link rel="stylesheet" href="./output.css" />
+  <link rel="stylesheet" href="./input.css" />
   <meta name="description" content="Ничего лишнего, только факты" />
   <meta data-rh="true" name="keywords" content="новости, события, факты, статья, политика, экономика,спорт, медицина" />
   <title>Проверенные новости от Kokoc | Чтобы быть в курсе</title>
 </head>
+
 <body>
   <main class="main">
     <section class="news">
-      <h1 class="news__header">Новости</h1>
-      <div class="news__grid-wrapper" id="news__grid-wrapper-js"></div>
+      <div class="section-inner-wrapper">
+        <h1 class="news__header">Новости</h1>
+        <div class="news__grid-wrapper" id="news__grid-wrapper-js">
+          <!-- карточка с новостью -->
+        </div>
+      </div>
     </section>
-
+    <!-- шаблон карточки -->
     <template class="news__card" id="news__card-js">
-      <article class="news__item" id="news__item-js">
-        <img class="news__image news__image-js" src="" alt="" />
-        <div class="news__content news__content-js">
-          <h2 class="news__title news__title-js"></h2>
-          <date class="news__date text-color_gray news__date-js"></date>
-          <p class="news__preview news__preview-js"></p>
-          <span class="news__author text-color_gray news__author-js"></span>
-          <button class="button-like button-like-js" type="button"></button>
+      <article class="news__item news__item-js card">
+        <img class="card__image card__image-js" src="" alt="" />
+        <div class="card__content card__content-js">
+          <h2 class="card__title card__title-js"></h2>
+          <date class="card__date text-color_gray card__date-js"></date>
+          <p class="card__body card__body-js"></p>
+          <div class="card__label">
+            <span class="card__author text-color_gray card__author-js"></span>
+            <button class="button-like button-like-js" type="button"></button>
+          </div>
         </div>
       </article>
     </template>
-    
   </main>
   <script src="./scripts/script.js"></script>
 </body>

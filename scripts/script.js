@@ -60,7 +60,7 @@ class Card {
   _getTemplate() {
     return document
       .querySelector(this._cardSelector)
-      .content.querySelector('#news__item-js')
+      .content.querySelector('.news__item-js')
       .cloneNode(true);
   }
   
@@ -76,13 +76,13 @@ class Card {
 
   generateCard() {
     this._newsItem = this._getTemplate();
-    this._newsItem.querySelector('.news__image-js').src = this._imgUrl;
-    this._newsItem.querySelector('.news__image-js').alt = `На фото ` + `${this._name}`;
-    this._newsItem.querySelector('.news__title-js').textContent = this._name;
-    this._newsItem.querySelector('.news__date-js').textContent = this._date;
-    this._newsItem.querySelector('.news__author-js').textContent = this._author;
-    this._newsItem.querySelector('.news__preview-js').textContent = this._text;
-    this._newsItem.querySelector('.news__content-js').setAttribute('data-id', this._id);
+    this._newsItem.querySelector('.card__image-js').src = this._imgUrl;
+    this._newsItem.querySelector('.card__image-js').alt = `На фото ` + `${this._name}`;
+    this._newsItem.querySelector('.card__title-js').textContent = this._name;
+    this._newsItem.querySelector('.card__date-js').textContent = this._date;
+    this._newsItem.querySelector('.card__author-js').textContent = this._author;
+    this._newsItem.querySelector('.card__body-js').textContent = this._text;
+    this._newsItem.querySelector('.card__content-js').setAttribute('data-id', this._id);
     this._setEventListeners();
 
     return this._newsItem;
