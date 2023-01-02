@@ -14,25 +14,26 @@
 <body>
   <main class="main">
     <section class="news">
-      <div class="section-inner-wrapper">
         <h1 class="news__header">Новости</h1>
         <div class="news__grid-wrapper" id="news__grid-wrapper-js">
           <!-- карточка с новостью -->
         </div>
-      </div>
     </section>
     <!-- шаблон карточки -->
     <template class="news__card" id="news__card-js">
-      <article class="news__item news__item-js card">
+      <article class="card card-js">
         <img class="card__image card__image-js" src="" alt="" />
         <div class="card__content card__content-js">
+          <div>
           <h2 class="card__title card__title-js"></h2>
           <date class="card__date text-color_gray card__date-js"></date>
           <p class="card__body card__body-js"></p>
+        </div>
           <div class="card__label">
             <span class="card__author text-color_gray card__author-js"></span>
             <button class="button-like button-like-js" type="button"></button>
           </div>
+        
         </div>
       </article>
     </template>

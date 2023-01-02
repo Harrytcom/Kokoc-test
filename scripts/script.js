@@ -60,7 +60,7 @@ class Card {
   _getTemplate() {
     return document
       .querySelector(this._cardSelector)
-      .content.querySelector('.news__item-js')
+      .content.querySelector('.card-js')
       .cloneNode(true);
   }
   

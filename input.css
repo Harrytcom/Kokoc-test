@@ -1,5 +1,6 @@
-@import url(./reset.css);
+@import url("./reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* ==================== VARIABLES ====================== */
 html {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -9,23 +10,31 @@ html {
   box-sizing: border-box;
 }
 
+/* ==================== COMMON ====================== */
+.text-color_gray {
+  color: #c4c4c4;
+}
+
+img[alt] {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 /* ==================== NEWS SECTION ====================== */
 .news {
-  max-width: 1400px;
+  max-width: 1450px;
   margin: 0 auto;
+  padding: 0 25px 77px;
 }
 .news__grid-wrapper {
   display: grid;
-  max-width: 1400px;
-  margin: 0 25px;
-  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  grid-template-columns: repeat(3, 1fr);
   gap: 37px 40px;
-  justify-content: center;
-  margin-bottom: 77px;
 }
 @media (max-width: 992px) {
   .news__grid-wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
@@ -36,21 +45,18 @@ html {
 }
 @media (max-width: 576px) {
   .news__grid-wrapper {
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
   }
 }
 .news__header {
   font-size: 3.4286rem;
   font-weight: 400;
-  margin: 44px 25px 68px;
-  display: grid;
-  max-width: 1400px;
-  gap: 37px 40px;
+  margin: 44px 0 68px;
 }
 @media (max-width: 576px) {
   .news__header {
     grid-template-columns: 1fr;
-    margin: 10px 0 15px 0;
+    margin: 10px 0 15px;
   }
 }
 
@@ -78,7 +84,7 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
   height: 269px;
-  background: url(./img/no-photo.png) no-repeat 50% 80%;
+  background: url("./img/no-photo.png") no-repeat 50% 80%;
   background-size: 30%;
 }
 @media (max-width: 992px) {
@@ -100,6 +106,7 @@ html {
 }
 .card__content {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   margin: 24px 35px 35px;
 }
@@ -110,19 +117,23 @@ html {
 }
 .card__title {
   font-size: 1.7143rem;
+  font-weight: 500;
   line-height: 116%;
-  margin: 0 0 2px 0;
+  margin: 0 0 2px;
 }
 .card__date {
   font-size: 1.4286rem;
   line-height: 116%;
-  margin-bottom: 24px;
+  margin: 0 0 24px;
 }
 .card__body {
-  margin: 0 0 42px 0;
+  font-size: 1.2857rem;
+  line-height: 128%;
+  margin: 0 0 42px;
 }
 .card__label {
   display: flex;
+  margin-top: auto;
   align-items: center;
   justify-content: space-between;
 }
@@ -134,13 +145,11 @@ html {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-image: url(./img/like-btn.svg);
+  background-image: url("./img/like-btn.svg");
   background-repeat: no-repeat;
   background-color: #fff;
   width: 32px;
   height: 28px;
-  right: 35px;
-  bottom: 47px;
   padding: 0;
   align-self: center;
   justify-self: end;
@@ -149,33 +158,10 @@ html {
   transition: opacity 0.3s ease-in-out;
   cursor: pointer;
 }
-@media (max-width: 430px) {
-  .button-like {
-    bottom: 15px;
-    right: 15px;
-  }
-}
 .button-like:hover {
   opacity: 0.6;
 }
 .button-like_active-js {
-  background-image: url(./img/like-btn_active.svg);
-}
-.button-like_active-js:hover {
   opacity: 1;
-}
-
-/* ==================== COMMON ====================== */
-.text-color_gray {
-  color: #c4c4c4;
-}
-
-img[alt] {
-  text-align: center;
-  font-size: 1.5rem;
-}
-@media (max-width: 430px) {
-  img[alt] {
-    font-size: 1rem;
-  }
+  background-image: url("./img/like-btn_active.svg");
 }
